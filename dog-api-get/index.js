@@ -24,7 +24,15 @@ function watchForm() {
   });
 }
 
+function clearSearch() {
+  $('.clear-list').click( function(event) {
+    event.preventDefault();
+    $('.js-dog-list').empty();
+  })
+}
+
 $(function() {
   console.log('App loaded! Waiting for submit!');
   watchForm();
+  clearSearch();
 });
