@@ -3,7 +3,6 @@
 function getRandomDogs(n) {
   fetch('https://dog.ceo/api/breeds/image/random/'+n)
     .then(response => response.json())
-    // .then make images
     .then(responseJson => 
       displayResults(responseJson.message))
     
