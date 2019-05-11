@@ -2,7 +2,12 @@
 
 function getRandomDogs(breed) {
   fetch(`https://dog.ceo/api/breed/${breed}/images/random`)
-    .then(response => response.json())
+    .then(response => {
+      if (response.ok) {
+        return response.json();
+      }
+      throw new Error(response.statusText);
+    })
     .then(responseJson => 
       displayResults(responseJson.message))
     
